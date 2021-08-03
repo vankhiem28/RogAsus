@@ -1,0 +1,243 @@
+.header {
+    background-color:#000;  
+    position: relative;
+    z-index:10;
+}
+
+.header__nav {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav-logo {
+
+}
+
+.header__nav-logo-img {
+    width: 200px;
+}
+
+.header__nav-navigation-item {
+    display: inline-block;
+    padding:0 20px;
+    position: relative;
+}
+
+.header__nav-navigation-link {
+    text-decoration: none;
+    font-size:1.5rem;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.header__nav-navigation-link:hover {
+    color:#CD0014;
+}
+
+.header__nav-user {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-logo-svg ,
+.header__nav-user-search,
+.header__nav-user-user {
+    padding:0 19px;
+    position: relative;
+}
+
+.header__nav-svg-icon {
+    opacity: 0.7;
+}
+
+.header__nav-svg-icon:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.header__nav-user-user {
+    padding-left: 6px;
+}
+
+.header__nav-user-search-icon ,
+.header__nav-user-user-icon {
+    color:#fff;
+    font-size:2.0rem;
+}
+
+.header__nav-user-search-icon:hover ,
+.header__nav-user-user-icon:hover {
+    color:#CD0014;
+    cursor: pointer;
+}
+
+.header__nav-user-search::after {
+    position: absolute;
+    content: '';
+    height:25px;
+    width: 1px;
+    background-color:#424242;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* wrap header */
+
+.header__nav-item-wrap {
+    padding:20px 10px;
+    position:absolute;
+    left:-26px;
+    top: 39px;
+    background-color:#ccc;
+    width: 700px;
+    padding-top: 20px;
+    display:none;
+    animation: FadeIn linear 0.2s;
+}
+
+.header__nav-item-wrap::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: -20px;
+    height:20px;
+}
+
+.header__nav-navigation-item:hover .header__nav-item-wrap {
+    display:block;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header__wrap-top {
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.header__nav-item-wrap-item {
+    list-style: none;
+    padding:10px 0;
+
+}
+
+.header__nav-item-wrap-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(34, 33, 33);
+    font-weight: 400;
+}
+
+.header__wrap-bottom {
+    margin-left: 46px;
+    padding-top: 50px;
+    position: relative;
+}   
+
+.header__wrap-bottom::after {
+    position: absolute;
+    content:'';
+    width: 93%;
+    height: 1px;
+    background-color:#a19e9e;
+    left: 0;
+    top: 23px;
+}
+
+.header__nav-item-wrap-link:hover {
+    color:#CD0014;
+}
+
+.header__nav-item-wrap--small {
+    width: 300px;
+    padding-bottom: 40px;
+}
+
+.header__wrap-top-small {
+    display: flex;
+    justify-content:start;
+}
+
+.header__nav-item-wrap-item-add-padding {
+    padding-left: 40px;
+}
+/* overlay open search */
+
+.header__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.header__open-search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color:#202020;
+    height: 122px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-52%);
+    opacity: 0;
+    transition: all linear 0.2s;
+}
+
+.header__open-overlay:checked ~ .header__overlay {
+    display: block;
+}
+
+.header__open-overlay:checked ~ .header__open-search {
+    transform: translateY(49%);
+    opacity: 1;
+}
+
+.header__open-input {
+    width: 760px;
+    height:50px;
+    border: 1px solid #757575;
+    display: flex;
+}
+
+.header__open-search-icon {
+    color:#757575;
+    font-size: 1.6rem;
+    line-height: 50px;
+    padding:0 10px
+}
+
+.header__open-search-input {
+    flex:1;
+    border:none;
+    outline:none;
+    border-radius: 0;
+    font-size:1.6rem;
+    background-color:#202020;
+    color:#757575;
+}
+
+.header__open-close-icon {
+    color:#757575;
+    font-size: 1.6rem;
+    padding:0 16px
+}
+
+.header__open-close-icon {
+    cursor: pointer;
+}
