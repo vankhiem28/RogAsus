@@ -91,11 +91,12 @@
     position:absolute;
     left:-26px;
     top: 39px;
-    background-color:#ccc;
+    background-color:#fff;
     width: 700px;
     padding-top: 20px;
     display:none;
     animation: FadeIn linear 0.2s;
+    box-shadow: 0 0 0.7px;
 }
 
 .header__nav-item-wrap::before {
@@ -180,7 +181,7 @@
     right: 0;
     bottom: 0;
     top: 60px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     display: none;
 }
 
@@ -197,6 +198,7 @@
     transform: translateY(-52%);
     opacity: 0;
     transition: all linear 0.2s;
+    z-index: 2;
 }
 
 .header__open-overlay:checked ~ .header__overlay {
@@ -241,3 +243,111 @@
 .header__open-close-icon {
     cursor: pointer;
 }
+
+/* slick slider */
+
+.seaction-slider {
+    position: relative;
+}
+
+.slick-slider {
+    position: relative;
+}
+
+.slick-next {
+    z-index: 1;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    opacity: 0;
+    transition:all linear 0.1s;
+}
+
+.slick-next::after {
+    position: absolute;
+    content: " ";
+    top: -378px;
+    height:740px;
+    right: -7px;
+    width: 400px;
+
+}
+
+.slick-next:hover {
+    opacity: 1;
+}
+
+.slick-prev {
+    z-index: 1;
+    left:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all linear 0.1s;
+}
+
+
+.slick-prev::after {
+    position: absolute;
+    content: " ";
+    top: -378px;
+    height:740px;
+    left: -9px;
+    width: 400px;
+}
+
+.slick-prev:hover {
+    opacity: 1;
+
+}
+
+.slick-next,
+.slick-prev {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color:rgba(0, 0, 0, 0.8);
+    border:1px solid rgb(41, 40, 40);
+}
+
+.slick-slider-icon {
+    font-size: 3.0rem;
+    color: red;
+    
+}
+
+#slick-slide-control00,
+#slick-slide-control01,
+#slick-slide-control02,
+#slick-slide-control03 {
+    font-size:1px;
+    width: 60px;
+    background-color:rgba(104, 101, 101, 0.7);
+    height:3px;
+    border: none;
+    border-radius: 0;
+}
+
+
+.slick-active #slick-slide-control00,
+.slick-active #slick-slide-control01,
+.slick-active #slick-slide-control02,
+.slick-active #slick-slide-control03 {
+    background-color:#CD0014;
+}
+
+.slick-dots {
+    position: absolute;
+    display: flex;
+    list-style: none;
+    bottom: 18px;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.slick-dots li {
+    padding: 0 4px;
+}
+
